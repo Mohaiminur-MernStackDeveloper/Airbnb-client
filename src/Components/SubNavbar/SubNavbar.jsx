@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 import Modal from "./Modal";
+import { DatePicker } from "rsuite";
 
 const SubNavbar = () => {
   const [where, setWhere] = useState(false);
@@ -92,13 +93,12 @@ const SubNavbar = () => {
       {/* All modal is form here */}
       {/* where modal is here */}
       <Modal isOpen={where} setIsOpen={setWhere} Title="Search by region">
-        <form>
-          <div className="font-Inter flex justify-start items-center gap-4">
-            <input className="outline-none w-5 h-5 border-gray-500" type="checkbox" name="bangladesh" id="bangladesh" />
-            <label htmlFor="country">Bangladesh</label>
-          </div>
-          <input className="w-full bg-red-500 text-white font-Raleway py-2 rounded-md shadow-md mt-5" type="submit" value="Submit" />
-        </form>
+        <div className="grid grid-cols-3 gap-5">
+          <button className="text-start font-Inter text-sm">
+            <img className="w-full rounded-md border shadow-md mb-2" src="https://a0.muscache.com/im/pictures/d77de9f5-5318-4571-88c7-e97d2355d20a.jpg?im_w=320" alt="" />
+            <span>I am Flexiable</span>
+          </button>
+        </div>
       </Modal>
     </>
   );
