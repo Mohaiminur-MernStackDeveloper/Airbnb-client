@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
-const WhereModal = ({isOpen,setIsOpen}) => {
+const Modal = ({isOpen,setIsOpen, Title, children}) => {
 
   function closeModal() {
     setIsOpen(false);
@@ -37,12 +37,12 @@ const WhereModal = ({isOpen,setIsOpen}) => {
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg font-medium leading-6 text-gray-900 border-b pb-2 mb-3"
                   >
-                    Search by region
+                    {Title}
                   </Dialog.Title>
                   <div className="mt-2">
-                    <h1>You select your country</h1>
+                    {children}
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
@@ -54,4 +54,4 @@ const WhereModal = ({isOpen,setIsOpen}) => {
   );
 };
 
-export default WhereModal;
+export default Modal;

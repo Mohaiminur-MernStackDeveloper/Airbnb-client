@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
-import WhereModal from "./WhereModal";
-import { TbUfo } from "react-icons/tb";
+import Modal from "./Modal";
 
 const SubNavbar = () => {
-  const [where, setWhere] = useState(true);
+  const [where, setWhere] = useState(false);
   const [checkin, setCheckin] = useState(false);
   const [checkout, setCheckout] = useState(false);
   const [who, setWho] = useState(false);
@@ -92,7 +91,15 @@ const SubNavbar = () => {
       </div>
       {/* All modal is form here */}
       {/* where modal is here */}
-      <WhereModal isOpen={where} setIsOpen={setWhere} />
+      <Modal isOpen={where} setIsOpen={setWhere} Title="Search by region">
+        <form>
+          <div className="font-Inter flex justify-start items-center gap-4">
+            <input className="outline-none w-5 h-5 border-gray-500" type="checkbox" name="bangladesh" id="bangladesh" />
+            <label htmlFor="country">Bangladesh</label>
+          </div>
+          <input className="w-full bg-red-500 text-white font-Raleway py-2 rounded-md shadow-md mt-5" type="submit" value="Submit" />
+        </form>
+      </Modal>
     </>
   );
 };
