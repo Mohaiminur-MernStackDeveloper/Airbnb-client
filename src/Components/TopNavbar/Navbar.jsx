@@ -17,9 +17,10 @@ const Navbar = () => {
         screenWidth = newScreenWidth;
         setScreenSize(screenWidth);
         // colse subnavbar
-        if(screenWidth < 639){
-            setSubnavbarOpen(false);
-        }
+        console.log(screenWidth);
+        if (screenWidth < 700){
+          setSubnavbarOpen(false);
+        };
       }
     }
     window.addEventListener("resize", checkScreenWidth);
@@ -33,14 +34,16 @@ const Navbar = () => {
     <div className="border-b">
       {screenSize < 639 ? (
         <div className="w-11/12 mx-auto flex justify-between items-center font-Inter py-4 gap-5">
-            <button className="flex justify-start items-center gap-5 border w-full rounded-full px-5 py-2 shadow-md">
-                <BiSearchAlt2 className="text-3xl"/>
-                <span className="text-sm text-start tracking-tighter">
-                    <h1 className="font-bold text-base">Anywhere</h1>
-                    <p className="text-gray-400">Any week . add guest</p>
-                </span>
-            </button>
-            <span className="p-3 border rounded-full text-2xl"><TbAdjustmentsHorizontal/></span>
+          <button className="flex justify-start items-center gap-5 border w-full rounded-full px-5 py-2 shadow-md">
+            <BiSearchAlt2 className="text-3xl" />
+            <span className="text-sm text-start tracking-tighter">
+              <h1 className="font-bold text-base">Anywhere</h1>
+              <p className="text-gray-400">Any week . add guest</p>
+            </span>
+          </button>
+          <span className="p-3 border rounded-full text-2xl">
+            <TbAdjustmentsHorizontal />
+          </span>
         </div>
       ) : (
         <div className="w-11/12 mx-auto py-5 invisible sm:visible flex justify-between items-center font-Inter">
@@ -59,7 +62,10 @@ const Navbar = () => {
           </div>
 
           {/* secound section */}
-          <button onClick={()=>setSubnavbarOpen(!subNavbarOpen)} className="flex justify-center items-center border shadow-md px-5 py-2 rounded-full text-xs md:text-base tracking-tighter">
+          <button
+            onClick={() => setSubnavbarOpen(!subNavbarOpen)}
+            className="flex justify-center items-center border shadow-md px-5 py-2 rounded-full text-xs md:text-base tracking-tighter"
+          >
             Anywhere <span className="text-gray-300 mx-2">|</span> Any week{" "}
             <span className="text-gray-300 mx-2">|</span>{" "}
             <span className="text-gray-500 mx-2">Add Guests</span>{" "}
@@ -76,8 +82,8 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    {/* subbar is form here */}
-    {subNavbarOpen && <SubNavbar/>}
+      {/* subbar is form here */}
+      {subNavbarOpen && <SubNavbar />}
     </div>
   );
 };
