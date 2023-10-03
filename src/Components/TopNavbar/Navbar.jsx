@@ -7,7 +7,7 @@ import SubNavbar from "../SubNavbar/SubNavbar";
 
 const Navbar = () => {
   const [screenSize, setScreenSize] = useState(window.innerWidth);
-  const [subNavbarOpen, setSubnavbarOpen] = useState(true);
+  const [subNavbarOpen, setSubnavbarOpen] = useState(false);
 
   function monitorScreenWidth() {
     let screenWidth = window.innerWidth;
@@ -16,6 +16,10 @@ const Navbar = () => {
       if (newScreenWidth !== screenWidth) {
         screenWidth = newScreenWidth;
         setScreenSize(screenWidth);
+        // colse subnavbar
+        if(screenWidth < 639){
+            setSubnavbarOpen(false);
+        }
       }
     }
     window.addEventListener("resize", checkScreenWidth);
@@ -55,7 +59,7 @@ const Navbar = () => {
           </div>
 
           {/* secound section */}
-          <button className="flex justify-center items-center border shadow-md px-5 py-2 rounded-full text-xs md:text-base tracking-tighter">
+          <button onClick={()=>setSubnavbarOpen(!subNavbarOpen)} className="flex justify-center items-center border shadow-md px-5 py-2 rounded-full text-xs md:text-base tracking-tighter">
             Anywhere <span className="text-gray-300 mx-2">|</span> Any week{" "}
             <span className="text-gray-300 mx-2">|</span>{" "}
             <span className="text-gray-500 mx-2">Add Guests</span>{" "}
@@ -73,7 +77,7 @@ const Navbar = () => {
         </div>
       )}
     {/* subbar is form here */}
-    <SubNavbar open={subNavbarOpen}/>
+    {subNavbarOpen && <SubNavbar/>}
     </div>
   );
 };
