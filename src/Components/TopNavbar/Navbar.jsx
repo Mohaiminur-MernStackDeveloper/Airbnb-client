@@ -3,9 +3,11 @@ import { TbWorld } from "react-icons/tb";
 import UserLogin from "./UserLogin";
 import { useState } from "react";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
+import SubNavbar from "../SubNavbar/SubNavbar";
 
 const Navbar = () => {
   const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const [subNavbarOpen, setSubnavbarOpen] = useState(true);
 
   function monitorScreenWidth() {
     let screenWidth = window.innerWidth;
@@ -70,6 +72,8 @@ const Navbar = () => {
           </div>
         </div>
       )}
+    {/* subbar is form here */}
+    <SubNavbar open={subNavbarOpen}/>
     </div>
   );
 };
