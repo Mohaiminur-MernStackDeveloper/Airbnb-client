@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
@@ -12,12 +12,11 @@ const SubNavbar = () => {
   const [checkout, setCheckout] = useState(false);
   const [who, setWho] = useState(false);
   const [country, setCountry] = useState("Search destinations");
-  const [guest, setGuest] = useState("Add guests");
+  const [guest, setGuest] = useState("Add");
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
   const [pets, setPets] = useState(0);
-
   const [date, setDate] = useState({
     startDate: new Date(),
     endDate: new Date(),
@@ -32,6 +31,12 @@ const SubNavbar = () => {
   const handlechangedate = (event) => {
     setDate(event.selection);
   };
+
+  // totol guest funtion is here
+  useEffect(()=>{
+    const totalGuests = adults+children+infants+pets;
+    setGuest(totalGuests);
+  },[adults,children,infants,pets])
 
   return (
     <>
@@ -154,7 +159,7 @@ const SubNavbar = () => {
             }`}
           >
             <h1 className="font-bold">Who</h1>
-            <p className="text-sm text-gray-500">{guest}</p>
+            <p className="text-sm text-gray-500">{guest} guests</p>
             {/* toggle is here */}
             <div
               hidden={!who}
