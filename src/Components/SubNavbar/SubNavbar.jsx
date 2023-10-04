@@ -41,7 +41,7 @@ const SubNavbar = () => {
   return (
     <>
       <div
-        className={`border w-fit mx-auto font-Inter ${
+        className={`border w-fit mx-auto font-Inter z-20 ${
           where | checkin | checkout | who && "bg-gray-200"
         } rounded-full border-gray-300 my-5`}
       >
@@ -52,7 +52,7 @@ const SubNavbar = () => {
           {/* first section is here */}
           <div
             onClick={() => {
-              setWhere(true),
+                setWhere(!where),
                 setCheckin(false),
                 setCheckout(false),
                 setWho(false);
@@ -66,7 +66,7 @@ const SubNavbar = () => {
             {/* toggle is here */}
             <div
               hidden={!where}
-              className="w-96 absolute border p-5 transition-opacity bg-white shadow-md top-20 rounded-md"
+              className="w-96 z-30 absolute border p-5 transition-opacity bg-white shadow-md top-20 rounded-md"
             >
               <h1 className="font-bold font-Inter mb-5 border-b pb-2">
                 Search your region
@@ -101,8 +101,8 @@ const SubNavbar = () => {
           {/* secound date picker part */}
           <div
             onClick={() => {
-              setWhere(false),
-                setCheckin(true),
+                setWhere(false),
+                setCheckin(!checkin),
                 setCheckout(false),
                 setWho(false);
             }}
@@ -114,7 +114,7 @@ const SubNavbar = () => {
             <p className="text-sm text-gray-500">
               {format(date.startDate, "MMM,dd,yyyy")}
             </p>
-            <div className="absolute top-20" hidden={!checkin}>
+            <div className="absolute top-20 z-30" hidden={!checkin}>
               <DateRangePicker
                 ranges={[date]}
                 onChange={handlechangedate}
@@ -125,9 +125,9 @@ const SubNavbar = () => {
           {/* third date picker part */}
           <div
             onClick={() => {
-              setWhere(false),
+                setWhere(false),
                 setCheckin(false),
-                setCheckout(true),
+                setCheckout(!checkout),
                 setWho(false);
             }}
             className={`px-10 rounded-full text-sm tracking-tighter cursor-pointer ${
@@ -138,7 +138,7 @@ const SubNavbar = () => {
             <p className="text-sm text-gray-500">
               {format(date.endDate, "MMM,dd,yyyy")}
             </p>
-            <div className="absolute top-20" hidden={!checkout}>
+            <div className="absolute top-20 z-30" hidden={!checkout}>
               <DateRangePicker
                 ranges={[date]}
                 onChange={handlechangedate}
@@ -149,10 +149,10 @@ const SubNavbar = () => {
           {/* Four who section is here */}
           <div
             onClick={() => {
-              setWhere(false),
+                setWhere(false),
                 setCheckin(false),
                 setCheckout(false),
-                setWho(true);
+                setWho(!who);
             }}
             className={`px-10 py-3 cursor-pointer relative rounded-full w-fit ${
               who && "bg-white"
@@ -166,7 +166,7 @@ const SubNavbar = () => {
               className="w-96 absolute border p-5 transition-opacity bg-white shadow-md top-20 rounded-md"
             >
               {/* body start from here */}
-              <div className="w-full grid-cols-1 justify-between items-center gap-3 grid">
+              <div className="w-full grid-cols-1 justify-between z-30 items-center gap-3 grid">
                 <div className="w-80 border-b py-5">
                   <div className="w-80 flex justify-between items-center">
                     <label className="w-full text-lg font-bold tracking-tighter font-Inter">

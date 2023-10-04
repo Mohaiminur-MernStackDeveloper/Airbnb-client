@@ -18,9 +18,9 @@ const Navbar = () => {
         setScreenSize(screenWidth);
         // colse subnavbar
         console.log(screenWidth);
-        if (screenWidth < 700){
+        if (screenWidth < 700) {
           setSubnavbarOpen(false);
-        };
+        }
       }
     }
     window.addEventListener("resize", checkScreenWidth);
@@ -62,17 +62,25 @@ const Navbar = () => {
           </div>
 
           {/* secound section */}
-          <button
-            onClick={() => setSubnavbarOpen(!subNavbarOpen)}
-            className="flex justify-center items-center border shadow-md px-5 py-2 rounded-full text-xs md:text-base tracking-tighter"
-          >
-            Anywhere <span className="text-gray-300 mx-2">|</span> Any week{" "}
-            <span className="text-gray-300 mx-2">|</span>{" "}
-            <span className="text-gray-500 mx-2">Add Guests</span>{" "}
-            <span className="ps-2 pt-2 pb-1 pe-1 bg-red-500 rounded-full text-white">
-              <BiSearchAlt2 className="text-2xl" />
-            </span>{" "}
-          </button>
+          {subNavbarOpen ? (
+            <div className="flex justify-center items-center gap-5">
+              <button className="focus:border-b border-black">stays</button>
+              <button className="focus:border-b border-black">Experience</button>
+              <button className="focus:border-b border-black">Online Experience</button>
+            </div>
+          ) : (
+            <button
+              onClick={() => setSubnavbarOpen(!subNavbarOpen)}
+              className="flex justify-center items-center border shadow-md px-5 py-2 rounded-full text-xs md:text-base tracking-tighter"
+            >
+              Anywhere <span className="text-gray-300 mx-2">|</span> Any week{" "}
+              <span className="text-gray-300 mx-2">|</span>{" "}
+              <span className="text-gray-500 mx-2">Add Guests</span>{" "}
+              <span className="ps-2 pt-2 pb-1 pe-1 bg-red-500 rounded-full text-white">
+                <BiSearchAlt2 className="text-2xl" />
+              </span>{" "}
+            </button>
+          )}
 
           {/* third section start from here */}
           <div className="flex justify-center items-center gap-3">
