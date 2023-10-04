@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import Modal from "../SubNavbar/Modal";
 import MultiRangeSlider from "multi-range-slider-react";
-import { PiHouseLineLight,PiWarehouseThin } from "react-icons/pi";
+import { PiHouseLineLight, PiWarehouseThin } from "react-icons/pi";
 import { MdApartment } from "react-icons/md";
 import { LuHotel } from "react-icons/lu";
 
@@ -14,11 +14,39 @@ const SecoundNavbar = () => {
   const [filterModal, setFiltermodal] = useState(false);
   const [minValue, set_minValue] = useState(25);
   const [maxValue, set_maxValue] = useState(75);
+  const [mediumScreen, setMediumScreen] = useState(
+    window.innerWidth < 764 ? true : false
+  );
+  const [smallScreen, setSmallScreen] = useState(
+    window.innerWidth < 500 ? true : false
+  );
 
   const handleInput = (e) => {
     set_minValue(e.minValue);
     set_maxValue(e.maxValue);
   };
+
+  function monitorScreenWidth() {
+    let screenWidth = window.innerWidth;
+    function checkScreenWidth() {
+      const newScreenWidth = window.innerWidth;
+      if (newScreenWidth !== screenWidth) {
+        if (screenWidth < 764) {
+          setMediumScreen(true);
+        } else if (screenWidth < 500) {
+          setSmallScreen(true);
+        } else {
+          setSmallScreen(false);
+          setMediumScreen(false);
+        }
+      }
+    }
+    window.addEventListener("resize", checkScreenWidth);
+    return function stopMonitoring() {
+      window.removeEventListener("resize", checkScreenWidth);
+    };
+  }
+  const stopMonitoring = monitorScreenWidth();
 
   return (
     <>
@@ -28,35 +56,39 @@ const SecoundNavbar = () => {
           <SwiperCatefory />
         </div>
         {/* filter button is here */}
-        <div
-          onClick={() => setFiltermodal(!filterModal)}
-          className="w-fit px-5 mx-auto flex justify-center items-center gap-2 cursor-pointer rounded-md tracking-tighter shadow-sm z-10 py-2 border text-center"
-        >
-          <TbAdjustmentsHorizontal />
-          Filter
-        </div>
-        {/* Tax before switch is here */}
-        <div className="w-full">
-          <button
-            onClick={() => setEnabled(!enabled)}
-            className="w-fit mx-auto py-2 px-5 flex justify-center items-center rounded-md shadow-sm gap-4 border z-10"
+        {!smallScreen && (
+          <div
+            onClick={() => setFiltermodal(!filterModal)}
+            className="w-fit px-5 mx-auto flex justify-center items-center gap-2 cursor-pointer rounded-md tracking-tighter shadow-sm z-10 py-2 border text-center"
           >
-            <span>Display total before Taxes</span>
-            <Switch
-              checked={enabled}
-              onChange={setEnabled}
-              className={`${enabled ? "bg-black" : "bg-gray-500"}
-          relative inline-flex h-[23px] w-[41px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+            <TbAdjustmentsHorizontal />
+            Filter
+          </div>
+        )}
+        {/* Tax before switch is here */}
+        {!mediumScreen && (
+          <div className="w-full">
+            <button
+              onClick={() => setEnabled(!enabled)}
+              className="w-fit mx-auto py-2 px-5 flex justify-center items-center rounded-md shadow-sm gap-4 border z-10"
             >
-              <span className="sr-only">Use setting</span>
-              <span
-                aria-hidden="true"
-                className={`${enabled ? "translate-x-5" : "translate-x-0"}
+              <span>Display total before Taxes</span>
+              <Switch
+                checked={enabled}
+                onChange={setEnabled}
+                className={`${enabled ? "bg-black" : "bg-gray-500"}
+          relative inline-flex h-[23px] w-[41px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+              >
+                <span className="sr-only">Use setting</span>
+                <span
+                  aria-hidden="true"
+                  className={`${enabled ? "translate-x-5" : "translate-x-0"}
             pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
-              />
-            </Switch>
-          </button>
-        </div>
+                />
+              </Switch>
+            </button>
+          </div>
+        )}
       </div>
       {/* Filter Modal is here */}
       <Modal isOpen={filterModal} setIsOpen={setFiltermodal} Title="Filters">

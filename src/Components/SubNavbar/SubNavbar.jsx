@@ -27,8 +27,6 @@ const SubNavbar = () => {
     setDate(event.selection);
   };
 
-  console.log(checkin);
-
   // totol guest funtion is here
   useEffect(() => {
     const totalGuests = adults + children + infants + pets;
@@ -56,7 +54,7 @@ const SubNavbar = () => {
             }`}
           >
             <h1 className="font-bold">Where</h1>
-            <p className="text-sm text-gray-500">{country}</p>
+            <input className="border-none text-sm text-gray-500 outline-none bg-transparent" onChange={(e)=>setCountry(e.target.value)} type="text" placeholder={country} />
             {/* toggle is here */}
             <div
               hidden={!where}
@@ -79,7 +77,7 @@ const SubNavbar = () => {
                   <span className="text-xs">I am Flexiable</span>
                 </label>
                 <label
-                  onClick={() => setCountry("Bangladesh")}
+                  onClick={() => {setCountry("Bangladesh")}}
                   className="text-start font-Inter text-sm"
                 >
                   <img
@@ -275,7 +273,7 @@ const SubNavbar = () => {
                       <button
                         className="border p-3 rounded-full"
                         onClick={(e) => {
-                          pets < 5 && setPets(pets + 1), e.stopPropagation;
+                          pets < 5 && setPets(pets + 1), e.stopPropagation();
                         }}
                       >
                         <AiOutlinePlus />

@@ -17,7 +17,6 @@ const Navbar = () => {
         screenWidth = newScreenWidth;
         setScreenSize(screenWidth);
         // colse subnavbar
-        console.log(screenWidth);
         if (screenWidth < 700) {
           setSubnavbarOpen(false);
         }

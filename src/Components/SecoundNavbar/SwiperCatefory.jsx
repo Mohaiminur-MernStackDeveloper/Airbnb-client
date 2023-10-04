@@ -10,6 +10,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const SwiperCatefory = () => {
   const [category, setCategory] = useState("all");
+  const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 450 ? true : false);
 
   return (
     <div className="flex justify-center items-center gap-5">
@@ -17,7 +18,7 @@ const SwiperCatefory = () => {
         <MdKeyboardArrowLeft />
       </button>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={isSmallScreen ? 3 : 4}
         spaceBetween={30}
         navigation={{
           prevEl: ".prev",
