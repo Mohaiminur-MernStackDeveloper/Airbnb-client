@@ -34,11 +34,12 @@ const Modal = ({isOpen,setIsOpen, Title, children}) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-8/12 transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900 border-b pb-2 mb-3"
+                    className="text-lg text-center font-medium leading-6 text-gray-900 border-b pb-5 mb-3"
                   >
+                    <button onClick={closeModal} className="absolute left-6 px-2 pb-1 rotate-45 rounded-full hover:bg-gray-100 outline-none">+</button>
                     {Title}
                   </Dialog.Title>
                   <div className="mt-2">
