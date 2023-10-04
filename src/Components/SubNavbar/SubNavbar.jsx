@@ -23,20 +23,17 @@ const SubNavbar = () => {
     key: "selection",
   });
 
-  const subnavsearchfuntion = (data) => {
-    data.preventDefault();
-    console.log(country);
-  };
-
   const handlechangedate = (event) => {
     setDate(event.selection);
   };
 
+  console.log(checkin);
+
   // totol guest funtion is here
-  useEffect(()=>{
-    const totalGuests = adults+children+infants+pets;
+  useEffect(() => {
+    const totalGuests = adults + children + infants + pets;
     setGuest(totalGuests);
-  },[adults,children,infants,pets])
+  }, [adults, children, infants, pets]);
 
   return (
     <>
@@ -45,14 +42,11 @@ const SubNavbar = () => {
           where | checkin | checkout | who && "bg-gray-200"
         } rounded-full border-gray-300 my-5`}
       >
-        <form
-          onSubmit={subnavsearchfuntion}
-          className="flex justify-center items-center gap-2"
-        >
+        <div className="flex justify-center items-center gap-2">
           {/* first section is here */}
           <div
             onClick={() => {
-                setWhere(!where),
+              setWhere(!where),
                 setCheckin(false),
                 setCheckout(false),
                 setWho(false);
@@ -101,7 +95,7 @@ const SubNavbar = () => {
           {/* secound date picker part */}
           <div
             onClick={() => {
-                setWhere(false),
+              setWhere(false),
                 setCheckin(!checkin),
                 setCheckout(false),
                 setWho(false);
@@ -125,7 +119,7 @@ const SubNavbar = () => {
           {/* third date picker part */}
           <div
             onClick={() => {
-                setWhere(false),
+              setWhere(false),
                 setCheckin(false),
                 setCheckout(!checkout),
                 setWho(false);
@@ -149,7 +143,7 @@ const SubNavbar = () => {
           {/* Four who section is here */}
           <div
             onClick={() => {
-                setWhere(false),
+              setWhere(false),
                 setCheckin(false),
                 setCheckout(false),
                 setWho(!who);
@@ -163,10 +157,10 @@ const SubNavbar = () => {
             {/* toggle is here */}
             <div
               hidden={!who}
-              className="w-96 absolute border p-5 transition-opacity bg-white shadow-md top-20 rounded-md"
+              className="w-96 absolute border p-5 transition-opacity z-40 bg-white shadow-md top-20 rounded-md"
             >
               {/* body start from here */}
-              <div className="w-full grid-cols-1 justify-between z-30 items-center gap-3 grid">
+              <div className="w-full grid-cols-1 justify-between bg-white items-center gap-3 grid">
                 <div className="w-80 border-b py-5">
                   <div className="w-80 flex justify-between items-center">
                     <label className="w-full text-lg font-bold tracking-tighter font-Inter">
@@ -178,14 +172,20 @@ const SubNavbar = () => {
                     <div className="w-full flex justify-center items-center gap-3">
                       <button
                         className="border p-3 rounded-full"
-                        onClick={() => adults > 0 && setAdults(adults - 1)}
+                        onClick={(e) => {
+                          adults > 0 && setAdults(adults - 1),
+                            e.stopPropagation();
+                        }}
                       >
                         <AiOutlineMinus />
                       </button>
                       {adults}
                       <button
                         className="border p-3 rounded-full"
-                        onClick={() => adults < 20 && setAdults(adults + 1)}
+                        onClick={(e) => {
+                          adults < 20 && setAdults(adults + 1),
+                            e.stopPropagation();
+                        }}
                       >
                         <AiOutlinePlus />
                       </button>
@@ -203,18 +203,20 @@ const SubNavbar = () => {
                     <div className="w-full flex justify-center items-center gap-3">
                       <button
                         className="border p-3 rounded-full"
-                        onClick={() =>
-                          children > 0 && setChildren(children - 1)
-                        }
+                        onClick={(e) => {
+                          children > 0 && setChildren(children - 1),
+                            e.stopPropagation();
+                        }}
                       >
                         <AiOutlineMinus />
                       </button>
                       {children}
                       <button
                         className="border p-3 rounded-full"
-                        onClick={() =>
-                          children < 10 && setChildren(children + 1)
-                        }
+                        onClick={(e) => {
+                          children < 10 && setChildren(children + 1),
+                            e.stopPropagation();
+                        }}
                       >
                         <AiOutlinePlus />
                       </button>
@@ -232,14 +234,20 @@ const SubNavbar = () => {
                     <div className="w-full flex justify-center items-center gap-3">
                       <button
                         className="border p-3 rounded-full"
-                        onClick={() => infants > 0 && setInfants(infants - 1)}
+                        onClick={(e) => {
+                          infants > 0 && setInfants(infants - 1),
+                            e.stopPropagation();
+                        }}
                       >
                         <AiOutlineMinus />
                       </button>
                       {infants}
                       <button
                         className="border p-3 rounded-full"
-                        onClick={() => infants < 2 && setInfants(infants + 1)}
+                        onClick={(e) => {
+                          infants < 2 && setInfants(infants + 1),
+                            e.stopPropagation();
+                        }}
                       >
                         <AiOutlinePlus />
                       </button>
@@ -257,14 +265,18 @@ const SubNavbar = () => {
                     <div className="w-full flex justify-center items-center gap-3">
                       <button
                         className="border p-3 rounded-full"
-                        onClick={() => pets > 0 && setPets(pets - 1)}
+                        onClick={(e) => {
+                          pets > 0 && setPets(pets - 1), e.stopPropagation();
+                        }}
                       >
                         <AiOutlineMinus />
                       </button>
                       {pets}
                       <button
                         className="border p-3 rounded-full"
-                        onClick={() => pets < 5 && setPets(pets + 1)}
+                        onClick={(e) => {
+                          pets < 5 && setPets(pets + 1), e.stopPropagation;
+                        }}
                       >
                         <AiOutlinePlus />
                       </button>
@@ -288,7 +300,7 @@ const SubNavbar = () => {
             <BiSearchAlt2 className="text-lg" />
             <span>Search</span>
           </button>
-        </form>
+        </div>
       </div>
     </>
   );

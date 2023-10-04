@@ -11,7 +11,7 @@ import { LuHotel } from "react-icons/lu";
 
 const SecoundNavbar = () => {
   const [enabled, setEnabled] = useState(false);
-  const [filterModal, setFiltermodal] = useState(true);
+  const [filterModal, setFiltermodal] = useState(false);
   const [minValue, set_minValue] = useState(25);
   const [maxValue, set_maxValue] = useState(75);
 
@@ -30,7 +30,7 @@ const SecoundNavbar = () => {
         {/* filter button is here */}
         <div
           onClick={() => setFiltermodal(!filterModal)}
-          className="w-fit px-5 mx-auto flex justify-center items-center gap-2 cursor-pointer rounded-md tracking-tighter shadow-sm py-2 border text-center"
+          className="w-fit px-5 mx-auto flex justify-center items-center gap-2 cursor-pointer rounded-md tracking-tighter shadow-sm z-10 py-2 border text-center"
         >
           <TbAdjustmentsHorizontal />
           Filter
@@ -39,7 +39,7 @@ const SecoundNavbar = () => {
         <div className="w-full">
           <button
             onClick={() => setEnabled(!enabled)}
-            className="w-fit mx-auto py-2 px-5 flex justify-center items-center rounded-md shadow-sm gap-4 border"
+            className="w-fit mx-auto py-2 px-5 flex justify-center items-center rounded-md shadow-sm gap-4 border z-10"
           >
             <span>Display total before Taxes</span>
             <Switch
