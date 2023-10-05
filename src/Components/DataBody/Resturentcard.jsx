@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { addResData } from '../../Redux/Features/Resturent/ResturentData';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchresturent } from '../../Redux/Features/Resturent/ResturentData';
 
 const Resturentcard = () => {
+    const {resturetrentData} = useSelector((state)=>state.resturentSlice);
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        fetch("http://localhost:5000/alldata").then(res=>res.json())
-        .then(data=> dispatch(addResData(data)));
+        dispatch(fetchresturent());
     },[])
+
+
+    console.log(resturetrentData);
 
     return (
         <div>

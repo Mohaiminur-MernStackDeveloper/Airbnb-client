@@ -1,12 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ResturentData from "./Features/Resturent/ResturentData";
+import resturentSlice from "../Redux/Features/Resturent/ResturentData"
 
 const store = configureStore({
     reducer:{
-        ResturentDataall: ResturentData,
+        resturentSlice: resturentSlice,
     }
 });
-
 
 
 export default store;
