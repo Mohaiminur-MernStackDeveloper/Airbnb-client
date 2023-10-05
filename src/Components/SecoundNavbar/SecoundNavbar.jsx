@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SwiperCatefory from "./SwiperCatefory";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 import { useState } from "react";
@@ -8,8 +8,11 @@ import MultiRangeSlider from "multi-range-slider-react";
 import { PiHouseLineLight, PiWarehouseThin } from "react-icons/pi";
 import { MdApartment } from "react-icons/md";
 import { LuHotel } from "react-icons/lu";
+import { useDispatch } from "react-redux";
+import { changestate } from "../../Redux/Features/TaxState/isTax";
 
 const SecoundNavbar = () => {
+  const dispatch = useDispatch();
   const [enabled, setEnabled] = useState(false);
   const [filterModal, setFiltermodal] = useState(false);
   const [minValue, set_minValue] = useState(25);
@@ -74,6 +77,7 @@ const SecoundNavbar = () => {
             >
               <span>Display total before Taxes</span>
               <Switch
+                onClick={dispatch(changestate(enabled))}
                 checked={enabled}
                 onChange={setEnabled}
                 className={`${enabled ? "bg-black" : "bg-gray-500"}
