@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -7,10 +7,44 @@ import { BiRestaurant, BiSolidCity, BiBuildings } from "react-icons/bi";
 import { GiVillage, GiWorld } from "react-icons/gi";
 import { TbBeachOff } from "react-icons/tb";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { addResData } from "../../Redux/Features/Resturent/ResturentData";
 
 const SwiperCatefory = () => {
   const [category, setCategory] = useState("all");
-  const [isSmallScreen, setSmallScreen] = useState(window.innerWidth < 450 ? true : false);
+  const [isSmallScreen, setSmallScreen] = useState(
+    window.innerWidth < 450 ? true : false
+  );
+  const dispatch = useDispatch();
+
+  // filter data by category function is here
+  useEffect(() => {
+    if (category == "all") {
+      fetch("http://localhost:5000/alldata")
+        .then((res) => res.json())
+        .then((data) => dispatch(addResData(data)));
+    } else if (category == "iconiccities") {
+      fetch("http://localhost:5000/iconiccities")
+        .then((res) => res.json())
+        .then((data) => dispatch(addResData(data)));
+    } else if (category == "countryside") {
+      fetch("http://localhost:5000/countryside")
+        .then((res) => res.json())
+        .then((data) => dispatch(addResData(data)));
+    } else if (category == "topoftheworld") {
+      fetch("http://localhost:5000/topoftheworld")
+        .then((res) => res.json())
+        .then((data) => dispatch(addResData(data)));
+    } else if (category == "beach") {
+      fetch("http://localhost:5000/beach")
+        .then((res) => res.json())
+        .then((data) => dispatch(addResData(data)));
+    } else if (category == "luxe") {
+      fetch("http://localhost:5000/luxe")
+        .then((res) => res.json())
+        .then((data) => dispatch(addResData(data)));
+    }
+  }, [category]);
 
   return (
     <div className="flex justify-center items-center gap-5">
