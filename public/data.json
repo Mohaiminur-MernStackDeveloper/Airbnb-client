@@ -1,0 +1,413 @@
+[
+  {
+    "_id": "6519cb5b79aaacd56c96aba2",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-26300485/original/ee94e6c1-6ebc-496e-af84-1502edd1b759.jpeg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7fb0732b-4fd1-44cf-8600-46deb28ce3cd.jpg?im_w=240",
+    "description": "Stay with Amelia. Hosting for 5 years",
+    "country": "UK",
+    "city": "London",
+    "category": "iconiccities",
+    "distrance": "205 kilometers away",
+    "bookingStartDate": "oct 2",
+    "bookingEndDate": "oct 10",
+    "rating": 4.5,
+    "pricePerNight": 200,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 3, "aivlabeBed": 3 },
+      { "totalBed": 4, "aivlabeBed": 1 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 2, "aivlabeBed": 2 }
+    ],
+    "tax": 5
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96aba3",
+    "image": "https://a0.muscache.com/im/pictures/f90c7282-5195-41c0-876f-ccbd34628560.jpg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7fb0732b-4fd1-44cf-8600-46deb28ce3cd.jpg?im_w=240",
+    "description": "Stay with Amelia. Hosting for 5 years",
+    "country": "Bangladesh",
+    "city": "Rajshahi",
+    "category": "countryside",
+    "distrance": "200 kilometers away",
+    "bookingStartDate": "oct 2",
+    "bookingEndDate": "oct 7",
+    "pricePerNight": 140,
+    "rating": 4.1,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 3, "aivlabeBed": 3 },
+      { "totalBed": 4, "aivlabeBed": 1 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 3, "aivlabeBed": 2 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 2 }
+    ],
+    "tax": 3
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96aba4",
+    "image": "https://a0.muscache.com/im/pictures/1f770f5d-3c95-4521-aa6c-1ff4aede98de.jpg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/cbce3916-6fe2-4c74-b3a5-e7ffb32449b4.jpg?im_w=240",
+    "description": "Tiny home in Siloti Pant, India",
+    "country": "India",
+    "city": "Tiny",
+    "category": "countryside",
+    "distrance": "30 kilometers away",
+    "bookingStartDate": "oct 3",
+    "bookingEndDate": "oct 15",
+    "pricePerNight": 340,
+    "rating": 3.5,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 3, "aivlabeBed": 3 },
+      { "totalBed": 4, "aivlabeBed": 4 }
+    ],
+    "tax": 6
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96aba5",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-721540609203378406/original/9dfaf7d6-40f2-4673-b468-7c5ab3147f86.jpeg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7f4f053d-8940-422d-b94b-208f4b727903.jpg?im_w=240",
+    "description": "Entire rental unit in Dubai, United Arab Emirates",
+    "country": "UAE",
+    "city": "Dubai",
+    "category": "iconiccities",
+    "distrance": "3550 kilometers away",
+    "bookingStartDate": "oct 6",
+    "bookingEndDate": "oct 11",
+    "pricePerNight": 143,
+    "rating": 4.6,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 3, "aivlabeBed": 3 },
+      { "totalBed": 4, "aivlabeBed": 1 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 3, "aivlabeBed": 2 }
+    ],
+    "tax": 10
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96aba6",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-919391066738299347/original/6bcebc80-ebbe-4290-b171-0ec817ac19c3.jpeg?im_w=1200",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7fb0732b-4fd1-44cf-8600-46deb28ce3cd.jpg?im_w=240",
+    "description": "Luxury stay in Rome, Lazio, Italy",
+    "country": "Italy",
+    "city": "Rome",
+    "category": "iconiccities",
+    "distrance": "7306 kilometers away",
+    "bookingStartDate": "oct 4",
+    "bookingEndDate": "oct 29",
+    "rating": 4.9,
+    "pricePerNight": 345,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 3, "aivlabeBed": 2 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 2 }
+    ],
+    "tax": 30
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96aba7",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-892636584500492829/original/828bf472-0ba4-48d4-8f6b-b7b6e64c5ece.jpeg?im_w=720",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7fb0732b-4fd1-44cf-8600-46deb28ce3cd.jpg?im_w=240",
+    "description": "Luxury stay in Dublin, County Dublin, Ireland",
+    "country": "Ireland",
+    "city": "Dublin",
+    "category": "iconiccities",
+    "distrance": "8347 kilometers away",
+    "bookingStartDate": "oct 8",
+    "bookingEndDate": "oct 13",
+    "rating": 4.99,
+    "pricePerNight": 18399,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 5 }
+    ],
+    "tax": 3
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96aba8",
+    "image": "https://a0.muscache.com/im/pictures/3ccacc04-2a74-4d02-a772-6991eb938fc6.jpg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/3a36a019-2b90-4227-a548-fbf8aa18951d.jpg?im_w=240",
+    "description": "Private room in guesthouse in Namche, Nepal",
+    "country": "Nepal",
+    "city": "Namche",
+    "category": "topoftheworld",
+    "distrance": "3517 kilometers away",
+    "bookingStartDate": "oct 1",
+    "bookingEndDate": "oct 6",
+    "rating": 3.1,
+    "pricePerNight": 23,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 4 },
+      { "totalBed": 5, "aivlabeBed": 3 }
+    ],
+    "tax": 3
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96aba9",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-27451296/original/6bc4e7ab-62b4-424a-9c8a-2e56d2e0364b.jpeg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/ec399379-9e97-49be-b622-5c8b777e8334.jpg?im_w=240",
+    "description": "Tiny home in San Juan, Ecuador",
+    "country": "Ecuador",
+    "city": "San Juan",
+    "category": "topoftheworld",
+    "distrance": "3596 kilometers away",
+    "bookingStartDate": "oct 9",
+    "bookingEndDate": "oct 14",
+    "rating": 4.4,
+    "pricePerNight": 109,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 4 },
+      { "totalBed": 5, "aivlabeBed": 3 },
+      { "totalBed": 2, "aivlabeBed": 1 }
+    ],
+    "tax": 3
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96abaa",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-54022691/original/4c8a44ab-ced7-41ef-bd14-b0413462ab05.jpeg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/d10fa2ca-f9b7-4694-8335-a520810fa976.jpg?im_w=240",
+    "description": "Entire rental unit in Muang Pattaya, Thailand",
+    "country": "Thailand",
+    "city": "Muang Pattaya",
+    "category": "beach",
+    "distrance": "10 kilometers away",
+    "bookingStartDate": "oct 2",
+    "bookingEndDate": "oct 7",
+    "rating": 4.8,
+    "pricePerNight": 73,
+    "avilableRoom": [
+      { "totalBed": 1, "aivlabeBed": 1 },
+      { "totalBed": 5, "aivlabeBed": 3 },
+      { "totalBed": 2, "aivlabeBed": 1 }
+    ],
+    "tax": 2
+  },
+  {
+    "_id": "6519cb5b79aaacd56c96abab",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-873064690436431918/original/d6e4af21-a43d-4d41-af78-735d43d5c085.jpeg?im_w=1200",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/d10fa2ca-f9b7-4694-8335-a520810fa976.jpg?im_w=240",
+    "description": "Luxury stay in Mahabaleshwar, Maharashtra, India",
+    "country": "India",
+    "city": "Maharashtra",
+    "category": "Luxe",
+    "distrance": "10 kilometers away",
+    "bookingStartDate": "oct 16",
+    "rating": 4.5,
+    "bookingEndDate": "oct 21",
+    "pricePerNight": 783,
+    "avilableRoom": [
+      { "totalBed": 1, "aivlabeBed": 1 },
+      { "totalBed": 5, "aivlabeBed": 3 }
+    ],
+    "tax": 2
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbba3",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-769683670068445218/original/8ebc94e8-b000-4c8b-9b2d-02495f410be0.jpeg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7fb0732b-4fd1-44cf-8600-46deb28ce3cd.jpg?im_w=240",
+    "description": "Entire rental unit in Melbourne, Australia",
+    "country": "Australia",
+    "city": "Melbourne",
+    "category": "iconiccities",
+    "distrance": "205 kilometers away",
+    "bookingStartDate": "oct 2",
+    "bookingEndDate": "oct 10",
+    "rating": 4.9,
+    "pricePerNight": 200,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 4, "aivlabeBed": 3 },
+      { "totalBed": 4, "aivlabeBed": 1 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 2, "aivlabeBed": 2 }
+    ],
+    "tax": 5
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbba4",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-738112664178739666/original/90ff2af2-ee41-4fba-9921-dcff6e0317dd.jpeg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/ce702d9b-e084-4b4a-a68d-0a9822036b1c.jpg?im_w=240",
+    "description": "Private room in farm stay in Paro, Bhutan",
+    "country": "Bhutan",
+    "city": "Paro",
+    "category": "countryside",
+    "distrance": "428 kilometers away",
+    "bookingStartDate": "oct 2",
+    "bookingEndDate": "oct 7",
+    "pricePerNight": 40,
+    "rating": 4.2,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 2 }
+    ],
+    "tax": 3
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbba5",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-988112832901011651/original/ab46a3cb-9f6c-4848-bdd2-1f3ccc109417.jpeg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/cbce3916-6fe2-4c74-b3a5-e7ffb32449b4.jpg?im_w=240",
+    "description": "Room in a farm stay hosted by Kusal",
+    "country": "Nepal",
+    "city": "Kusal",
+    "category": "countryside",
+    "distrance": "471 kilometers away",
+    "bookingStartDate": "oct 13",
+    "bookingEndDate": "oct 18",
+    "pricePerNight": 23,
+    "rating": 3.9,
+    "avilableRoom": [
+      { "totalBed": 1, "aivlabeBed": 1 },
+      { "totalBed": 3, "aivlabeBed": 3 },
+      { "totalBed": 4, "aivlabeBed": 4 }
+    ],
+    "tax": 2
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbba6",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-874686035326211853/original/ce3819b6-38cc-43b7-98b1-d0583a999752.jpeg?im_w=1200",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7f4f053d-8940-422d-b94b-208f4b727903.jpg?im_w=240",
+    "description": "Luxury stay in Cape Town, Western Cape, South Africa",
+    "country": "Africa",
+    "city": "Western Cape",
+    "category": "iconiccities",
+    "distrance": "9945 kilometers away",
+    "bookingStartDate": "oct 3",
+    "bookingEndDate": "oct 11",
+    "pricePerNight": 1956,
+    "rating": 4.6,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 3, "aivlabeBed": 3 },
+      { "totalBed": 4, "aivlabeBed": 1 },
+      { "totalBed": 3, "aivlabeBed": 2 }
+    ],
+    "tax": 40
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbba7",
+    "image": "https://a0.muscache.com/im/pictures/662c5480-04db-4018-8cd5-38db295bd2a3.jpg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7fb0732b-4fd1-44cf-8600-46deb28ce3cd.jpg?im_w=240",
+    "description": "Entire loft in Paris, France",
+    "country": "France",
+    "city": "Paris",
+    "category": "iconiccities",
+    "distrance": "7906 kilometers away",
+    "bookingStartDate": "oct 24",
+    "bookingEndDate": "oct 29",
+    "rating": 4.9,
+    "pricePerNight": 1345,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 2 }
+    ],
+    "tax": 30
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbba8",
+    "image": "https://a0.muscache.com/im/pictures/1a01f6df-42de-4537-b839-28358e083f0f.jpg?im_w=720",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/7fb0732b-4fd1-44cf-8600-46deb28ce3cd.jpg?im_w=240",
+    "description": "Tent in Marrakech, Morocco",
+    "country": "Morocco",
+    "city": "Marrakech",
+    "category": "iconiccities",
+    "distrance": "8347 kilometers away",
+    "bookingStartDate": "oct 8",
+    "bookingEndDate": "oct 13",
+    "rating": 4.99,
+    "pricePerNight": 1399,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 5 }
+    ],
+    "tax": 3
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbba9",
+    "image": "https://a0.muscache.com/im/pictures/10429578-3665-42c4-bd62-86b065b228da.jpg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/e21e5769-e334-4358-bf9b-bcafdb70add1.jpg?im_w=240",
+    "description": "Entire home in Guasca, Colombia",
+    "country": "Colombia",
+    "city": "Guasca",
+    "category": "topoftheworld",
+    "distrance": "3517 kilometers away",
+    "bookingStartDate": "oct 1",
+    "bookingEndDate": "oct 6",
+    "rating": 3.1,
+    "pricePerNight": 23,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 4 },
+      { "totalBed": 5, "aivlabeBed": 3 }
+    ],
+    "tax": 3
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbbaa",
+    "image": "https://a0.muscache.com/im/pictures/33dae5b5-6141-4e56-83ee-253b88d31159.jpg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/ec399379-9e97-49be-b622-5c8b777e8334.jpg?im_w=240",
+    "description": "Private room in resort in Cusco, Peru",
+    "country": "Peru",
+    "city": "Cusco",
+    "category": "topoftheworld",
+    "distrance": "3596 kilometers away",
+    "bookingStartDate": "oct 9",
+    "bookingEndDate": "oct 14",
+    "rating": 4.4,
+    "pricePerNight": 109,
+    "avilableRoom": [
+      { "totalBed": 2, "aivlabeBed": 2 },
+      { "totalBed": 5, "aivlabeBed": 4 },
+      { "totalBed": 5, "aivlabeBed": 3 },
+      { "totalBed": 2, "aivlabeBed": 1 }
+    ],
+    "tax": 3
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbbab",
+    "image": "https://a0.muscache.com/im/pictures/38e6a196-2cff-4f80-9f51-968969eb8ba2.jpg?im_w=960",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/User-1575174/original/0a9059b5-0254-46f9-92c5-873ac49a1720.png?im_w=240",
+    "description": "Entire villa in Puerto Vallarta, Mexico",
+    "country": "Mexico",
+    "city": "Vallarta",
+    "category": "beach",
+    "distrance": "10 kilometers away",
+    "bookingStartDate": "oct 2",
+    "bookingEndDate": "oct 7",
+    "rating": 4.8,
+    "pricePerNight": 73,
+    "avilableRoom": [
+      { "totalBed": 1, "aivlabeBed": 1 },
+      { "totalBed": 5, "aivlabeBed": 3 },
+      { "totalBed": 2, "aivlabeBed": 1 }
+    ],
+    "tax": 2
+  },
+  {
+    "_id": "6519d0ea79aaacd56c9dbbac",
+    "image": "https://a0.muscache.com/im/pictures/aaa92d5b-7c1c-497b-8432-bd7a8549eb66.jpg?im_w=1200",
+    "authorImg": "https://a0.muscache.com/im/pictures/user/d10fa2ca-f9b7-4694-8335-a520810fa976.jpg?im_w=240",
+    "description": "Luxury stay in Bophut, Koh Samui, Thailand",
+    "country": "Thailand",
+    "city": "Bophut",
+    "category": "Luxe",
+    "distrance": "10 kilometers away",
+    "bookingStartDate": "oct 16",
+    "rating": 4.5,
+    "bookingEndDate": "oct 21",
+    "pricePerNight": 783,
+    "avilableRoom": [
+      { "totalBed": 1, "aivlabeBed": 1 },
+      { "totalBed": 5, "aivlabeBed": 3 }
+    ],
+    "tax": 2
+  }
+]
