@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SwiperCatefory from "./SwiperCatefory";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 import { useState } from "react";
@@ -11,8 +11,6 @@ const SecoundNavbar = () => {
   const dispatch = useDispatch();
   const [enabled, setEnabled] = useState(false);
   const [filterModal, setFiltermodal] = useState(false);
-  const [minValue, set_minValue] = useState(0);
-  const [maxValue, set_maxValue] = useState(0);
   const [mediumScreen, setMediumScreen] = useState(
     window.innerWidth < 764 ? true : false
   );
@@ -20,10 +18,6 @@ const SecoundNavbar = () => {
     window.innerWidth < 500 ? true : false
   );
 
-  const handleInput = (e) => {
-    set_minValue(e.minValue);
-    set_maxValue(e.maxValue);
-  };
 
   function monitorScreenWidth() {
     let screenWidth = window.innerWidth;
@@ -47,7 +41,7 @@ const SecoundNavbar = () => {
   }
   const stopMonitoring = monitorScreenWidth();
 
-  // filter by price range function is here
+  
 
   return (
     <>
@@ -92,7 +86,7 @@ const SecoundNavbar = () => {
           </div>
         )}
       </div>
-      <FilterData maxValue={maxValue} minValue={minValue} filterModal={filterModal} setFiltermodal={setFiltermodal} handleInput={handleInput}/>
+      <FilterData filterModal={filterModal} setFiltermodal={setFiltermodal}/>
     </>
   );
 };

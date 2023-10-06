@@ -1,23 +1,91 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "../SubNavbar/Modal";
 import MultiRangeSlider from "multi-range-slider-react";
 import { PiHouseLineLight, PiWarehouseThin } from "react-icons/pi";
 import { MdApartment } from "react-icons/md";
-import { LuHotel } from "react-icons/lu"
+import { LuHotel } from "react-icons/lu";
+import { addResData } from "../../Redux/Features/Resturent/ResturentData";
 
-const FilterData = ({minValue, maxValue, filterModal, setFiltermodal,handleInput}) => {
-    const { resturetrentData } = useSelector((state) => state.resturentSlice);
-    const [entirerplace, setEntireplace] = useState(false);
-    const [room, setRoom] = useState(false);
-    const [sharedroom, setSharedroom] = useState(false);
-    const [bedroom, setBedroom] = useState(null);
-    const [bed, setBed] = useState(null);
-    const [bathrooms, setBathrooms] = useState(null);
-    const [propertyHouse, setpropertyHouse] = useState(false);
-    const [propertyApertment, setpropertyApertment] = useState(false);
-    const [propertyGuestHouse, setpropertyGuestHouse] = useState(false);
-    const [propertyHotel, setpropertyHotel] = useState(false);
+const FilterData = ({ filterModal, setFiltermodal }) => {
+  const { resturetrentData } = useSelector((state) => state.resturentSlice);
+  const dispatch = useDispatch();
+  const [maxRange, setMaxRange] = useState(0);
+  const [minValue, set_minValue] = useState(0);
+  const [maxValue, set_maxValue] = useState(0);
+  const [filterUpdateData, set_UpdateData] = useState(null);
+  const [entirerplace, setEntireplace] = useState(false);
+  const [room, setRoom] = useState(false);
+  const [sharedroom, setSharedroom] = useState(false);
+  const [bedroom, setBedroom] = useState(null);
+  const [bed, setBed] = useState(null);
+  const [bathrooms, setBathrooms] = useState(null);
+  const [propertyHouse, setpropertyHouse] = useState(false);
+  const [propertyApertment, setpropertyApertment] = useState(false);
+  const [propertyGuestHouse, setpropertyGuestHouse] = useState(false);
+  const [propertyHotel, setpropertyHotel] = useState(false);
+
+  // Modal filter function is here
+  useEffect(() => {
+    if (resturetrentData) {
+      const maxPrice = Math.max(
+        ...resturetrentData?.map((obj) => obj.pricePerNight)
+      );
+      const minPrice = Math.min(
+        ...resturetrentData?.map((obj) => obj.pricePerNight)
+      );
+      set_maxValue(maxPrice);
+      set_minValue(minPrice);
+      setMaxRange(maxPrice);
+    }
+  }, [resturetrentData]);
+
+  // filter modal data function is here
+  useEffect(() => {
+    const requestData = {
+      minValue,
+      maxValue,
+      entirerplace,
+      room,
+      sharedroom,
+      bedroom,
+      bed,
+      bathrooms,
+      propertyHouse,
+      propertyApertment,
+      propertyGuestHouse,
+      propertyHotel,
+    };
+
+    fetch("http://localhost:5000/filterModalData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestData),
+    })
+      .then((res) => res.json())
+      .then((data) => set_UpdateData(data));
+  }, [
+    resturetrentData,
+    minValue,
+    maxValue,
+    entirerplace,
+    room,
+    sharedroom,
+    bedroom,
+    bed,
+    bathrooms,
+    propertyHouse,
+    propertyApertment,
+    propertyGuestHouse,
+    propertyHotel,
+  ]);
+
+  const handleInput = (e) => {
+    set_minValue(e.minValue);
+    set_maxValue(e.maxValue);
+  };
 
   return (
     <>
@@ -29,7 +97,7 @@ const FilterData = ({minValue, maxValue, filterModal, setFiltermodal,handleInput
             <div className="my-5">
               <MultiRangeSlider
                 min={0}
-                max={2000}
+                max={maxRange}
                 minValue={minValue}
                 maxValue={maxValue}
                 onInput={(e) => {
@@ -414,29 +482,37 @@ const FilterData = ({minValue, maxValue, filterModal, setFiltermodal,handleInput
             <h1 className="font-bold">property Type</h1>
             <div className="flex justify-start gap-5 items-center my-5">
               <button
-              onClick={()=>setpropertyHouse(!propertyHouse)}
-                className={`py-5 w-40 border rounded-md flex flex-col justify-center items-center gap-5 ${propertyHouse && "border-2 border-black"}`}
+                onClick={() => setpropertyHouse(!propertyHouse)}
+                className={`py-5 w-40 border rounded-md flex flex-col justify-center items-center gap-5 ${
+                  propertyHouse && "border-2 border-black"
+                }`}
               >
                 <PiHouseLineLight className="text-5xl" />
                 <h1>House</h1>
               </button>
               <button
-              onClick={()=>setpropertyApertment(!propertyApertment)}
-                className={`py-5 border w-40 rounded-md flex flex-col justify-center items-center gap-5 ${propertyApertment && "border-2 border-black"}`}
+                onClick={() => setpropertyApertment(!propertyApertment)}
+                className={`py-5 border w-40 rounded-md flex flex-col justify-center items-center gap-5 ${
+                  propertyApertment && "border-2 border-black"
+                }`}
               >
                 <MdApartment className="text-5xl" />
                 <h1>Apartment</h1>
               </button>
               <button
-                onClick={()=>setpropertyGuestHouse(!propertyGuestHouse)}
-                className={`py-5 border w-40 rounded-md flex flex-col justify-center items-center gap-5 ${propertyGuestHouse && "border-2 border-black"}`}
+                onClick={() => setpropertyGuestHouse(!propertyGuestHouse)}
+                className={`py-5 border w-40 rounded-md flex flex-col justify-center items-center gap-5 ${
+                  propertyGuestHouse && "border-2 border-black"
+                }`}
               >
                 <PiWarehouseThin className="text-5xl" />
                 <h1>Guesthouse</h1>
               </button>
               <button
-                onClick={()=>setpropertyHotel(!propertyHotel)}
-                className={`py-5 border w-40 rounded-md flex flex-col justify-center items-center gap-5 ${propertyHotel && "border-2 border-black"}`}
+                onClick={() => setpropertyHotel(!propertyHotel)}
+                className={`py-5 border w-40 rounded-md flex flex-col justify-center items-center gap-5 ${
+                  propertyHotel && "border-2 border-black"
+                }`}
               >
                 <LuHotel className="text-5xl" />
                 <h1>Hotel</h1>
@@ -446,8 +522,11 @@ const FilterData = ({minValue, maxValue, filterModal, setFiltermodal,handleInput
         </div>
         <div className="flex justify-between items-center sticky bottom-0 z-40 border-t pt-5">
           <button className="font-bold underline">Clear all</button>
-          <button className="px-5 py-2 text-white bg-black rounded-full font-Inter tracking-tighter">
-            Show {resturetrentData?.length} Stays
+          <button
+            onClick={() =>{dispatch(addResData(filterUpdateData))}}
+            className="px-5 py-2 text-white bg-black rounded-full font-Inter tracking-tighter"
+          >
+            Show {filterUpdateData?.length} Stays
           </button>
         </div>
       </Modal>
