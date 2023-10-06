@@ -5,7 +5,10 @@ import MultiRangeSlider from "multi-range-slider-react";
 import { PiHouseLineLight, PiWarehouseThin } from "react-icons/pi";
 import { MdApartment } from "react-icons/md";
 import { LuHotel } from "react-icons/lu";
-import { addResData } from "../../Redux/Features/Resturent/ResturentData";
+import {
+  addResData,
+  fetchresturent,
+} from "../../Redux/Features/Resturent/ResturentData";
 
 const FilterData = ({ filterModal, setFiltermodal }) => {
   const { resturetrentData } = useSelector((state) => state.resturentSlice);
@@ -87,6 +90,24 @@ const FilterData = ({ filterModal, setFiltermodal }) => {
     set_maxValue(e.maxValue);
   };
 
+  // clear all function is here
+  const clearallfunction = () => {
+    dispatch(fetchresturent());
+    set_minValue(0);
+    set_UpdateData(resturetrentData);
+    setEntireplace(false);
+    setRoom(false);
+    setSharedroom(false);
+    setBedroom(null)
+    setBed(null);
+    setBathrooms(null);
+    setpropertyHouse(false);
+    setpropertyApertment(false);
+    setpropertyGuestHouse(false);
+    setpropertyHotel(false);
+    set_maxValue(resturetrentData.length);
+  };
+
   return (
     <>
       <Modal isOpen={filterModal} setIsOpen={setFiltermodal} Title="Filters">
@@ -145,6 +166,7 @@ const FilterData = ({ filterModal, setFiltermodal }) => {
                   onClick={() => {
                     setEntireplace(!entirerplace);
                   }}
+                  checked={entirerplace}
                   className="w-8 h-10"
                   type="checkbox"
                   name=""
@@ -162,6 +184,7 @@ const FilterData = ({ filterModal, setFiltermodal }) => {
                   }}
                   className="w-8 h-10"
                   type="checkbox"
+                  checked={room}
                   name=""
                   id=""
                 />
@@ -177,6 +200,7 @@ const FilterData = ({ filterModal, setFiltermodal }) => {
                   onClick={() => setSharedroom(!sharedroom)}
                   className="w-8 h-10"
                   type="checkbox"
+                  checked={sharedroom}
                   name=""
                   id=""
                 />
@@ -521,9 +545,11 @@ const FilterData = ({ filterModal, setFiltermodal }) => {
           </div>
         </div>
         <div className="flex justify-between items-center sticky bottom-0 z-40 border-t pt-5">
-          <button className="font-bold underline">Clear all</button>
+          <button onClick={()=>clearallfunction()} className="font-bold underline">Clear all</button>
           <button
-            onClick={() =>{dispatch(addResData(filterUpdateData))}}
+            onClick={() => {
+              dispatch(addResData(filterUpdateData));
+            }}
             className="px-5 py-2 text-white bg-black rounded-full font-Inter tracking-tighter"
           >
             Show {filterUpdateData?.length} Stays
