@@ -3,10 +3,15 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import { format } from "date-fns";
+import { format, set } from "date-fns";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { addResData } from "../../Redux/Features/Resturent/ResturentData";
 
 const SubNavbar = () => {
+  const { resturetrentData } = useSelector((state) => state.resturentSlice);
+  const dispatch = useDispatch();
+  const [totalcountry, setTotalCountry] = useState(null);
   const [where, setWhere] = useState(false);
   const [checkin, setCheckin] = useState(false);
   const [checkout, setCheckout] = useState(false);
@@ -22,6 +27,7 @@ const SubNavbar = () => {
     endDate: new Date(),
     key: "selection",
   });
+  const [updateData, setUpdateData] = useState(null);
 
   const handlechangedate = (event) => {
     setDate(event.selection);
@@ -32,6 +38,35 @@ const SubNavbar = () => {
     const totalGuests = adults + children + infants + pets;
     setGuest(totalGuests);
   }, [adults, children, infants, pets]);
+
+  useEffect(() => {
+    const country = resturetrentData.map((item) => item.country);
+    const uniqueCountries = [...new Set(country)];
+    setTotalCountry(uniqueCountries);
+  }, []);
+
+  // console.log(date.startDate.toISOString().split('T')[0]);
+
+  const filterDatabyform = () => {
+    const requestData = {
+      country,
+      startDate: date.startDate.toISOString().split("T")[0],
+      endDate: date.endDate.toISOString().split("T")[0],
+      adults,
+      children,
+      pets,
+      infants,
+    };
+    fetch("http://localhost:5000/filtersubnavbardata", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestData),
+    })
+      .then((res) => res.json())
+      .then((data) => dispatch(addResData(data)));
+  };
 
   return (
     <>
@@ -54,7 +89,12 @@ const SubNavbar = () => {
             }`}
           >
             <h1 className="font-bold">Where</h1>
-            <input className="border-none text-sm text-gray-500 outline-none bg-transparent" onChange={(e)=>setCountry(e.target.value)} type="text" placeholder={country} />
+            <input
+              className="border-none text-sm text-gray-500 outline-none bg-transparent"
+              onChange={(e) => setCountry(e.target.value)}
+              type="text"
+              placeholder={country}
+            />
             {/* toggle is here */}
             <div
               hidden={!where}
@@ -65,28 +105,23 @@ const SubNavbar = () => {
               </h1>
               {/* body start from here */}
               <div className="w-full grid-cols-3 justify-between items-center gap-3 grid">
-                <label
-                  onClick={() => setCountry("all")}
-                  className="text-start font-Inter text-sm"
-                >
-                  <img
-                    className="w-full h-auto rounded-md border shadow-md mb-2"
-                    src="https://a0.muscache.com/im/pictures/d77de9f5-5318-4571-88c7-e97d2355d20a.jpg?im_w=320"
-                    alt=""
-                  />
-                  <span className="text-xs">I am Flexiable</span>
-                </label>
-                <label
-                  onClick={() => {setCountry("Bangladesh")}}
-                  className="text-start font-Inter text-sm"
-                >
-                  <img
-                    className="w-full rounded-md border shadow-md mb-2"
-                    src="https://a0.muscache.com/im/pictures/d77de9f5-5318-4571-88c7-e97d2355d20a.jpg?im_w=320"
-                    alt=""
-                  />
-                  <span className="text-xs">Bangladesh</span>
-                </label>
+                {totalcountry &&
+                  totalcountry.map((country, index) => {
+                    return (
+                      <label
+                        key={index}
+                        onClick={() => setCountry(country)}
+                        className="text-start font-Inter text-sm"
+                      >
+                        <img
+                          className="w-full h-auto rounded-md border shadow-md mb-2"
+                          src="https://a0.muscache.com/im/pictures/d77de9f5-5318-4571-88c7-e97d2355d20a.jpg?im_w=320"
+                          alt=""
+                        />
+                        <span className="text-xs">{country}</span>
+                      </label>
+                    );
+                  })}
               </div>
             </div>
           </div>
@@ -292,6 +327,7 @@ const SubNavbar = () => {
                 setCheckin(false),
                 setCheckout(false),
                 setWho(false);
+              filterDatabyform();
             }}
             className="px-5 bg-red-500 text-white mr-3 py-2 rounded-full flex justify-center items-center gap-2"
           >
