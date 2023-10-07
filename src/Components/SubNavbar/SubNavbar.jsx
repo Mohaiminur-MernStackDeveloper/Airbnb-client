@@ -57,7 +57,7 @@ const SubNavbar = () => {
       pets,
       infants,
     };
-    fetch("http://localhost:5000/filtersubnavbardata", {
+    fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/filtersubnavbardata", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

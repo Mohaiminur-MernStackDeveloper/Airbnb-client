@@ -60,7 +60,7 @@ const FilterData = ({ filterModal, setFiltermodal }) => {
       propertyHotel,
     };
 
-    fetch("http://localhost:5000/filterModalData", {
+    fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/filterModalData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

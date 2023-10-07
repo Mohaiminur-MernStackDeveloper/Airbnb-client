@@ -6,7 +6,7 @@ const initialState = {
 
 export const fetchresturent = createAsyncThunk("resturentSlice",async()=>{
     try {
-        const response = await fetch("http://localhost:5000/alldata");
+        const response = await fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/alldata");
         const data = await response.json();
         return data; // Return the fetched data
       } catch (error) {

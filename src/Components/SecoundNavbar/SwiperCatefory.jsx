@@ -20,27 +20,27 @@ const SwiperCatefory = () => {
   // filter data by category function is here
   useEffect(() => {
     if (category == "all") {
-      fetch("http://localhost:5000/alldata")
+      fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/alldata")
         .then((res) => res.json())
         .then((data) => dispatch(addResData(data)));
     } else if (category == "iconiccities") {
-      fetch("http://localhost:5000/iconiccities")
+      fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/iconiccities")
         .then((res) => res.json())
         .then((data) => dispatch(addResData(data)));
     } else if (category == "countryside") {
-      fetch("http://localhost:5000/countryside")
+      fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/countryside")
         .then((res) => res.json())
         .then((data) => dispatch(addResData(data)));
     } else if (category == "topoftheworld") {
-      fetch("http://localhost:5000/topoftheworld")
+      fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/topoftheworld")
         .then((res) => res.json())
         .then((data) => dispatch(addResData(data)));
     } else if (category == "beach") {
-      fetch("http://localhost:5000/beach")
+      fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/beach")
         .then((res) => res.json())
         .then((data) => dispatch(addResData(data)));
     } else if (category == "luxe") {
-      fetch("http://localhost:5000/luxe")
+      fetch("https://airbnbserver-edlktpjdf-developermmr.vercel.app/luxe")
         .then((res) => res.json())
         .then((data) => dispatch(addResData(data)));
     }
